@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: './lib/smart.zoom.module.js',
@@ -33,10 +34,5 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractTextPlugin('smart.zoom.css'),
-	],
-	devtool: 'inline-source-map',
-	devServer: {
-		port: 3000,
-		contentBase: './'
-	}
+	]
 };
