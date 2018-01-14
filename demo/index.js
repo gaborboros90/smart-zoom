@@ -6,9 +6,15 @@
 		.controller('DemoAppController', DemoAppController);
 
 	function DemoAppController() {
-		var vm = this;
+		let vm = this;
 
-		this.title = 'Smart zoom demo app';
+		vm.baseDir = 'test-images/';
+
+		vm.zoomOptions = {
+			imageUrl: vm.baseDir + 'test-image-001.jpg',
+			active: false,
+			enabled: true
+		}
 	}
 
 	DemoAppController.$inject = [];

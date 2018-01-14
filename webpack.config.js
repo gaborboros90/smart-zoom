@@ -1,6 +1,10 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const extractSass = new ExtractTextPlugin({
+	filename: "smart.zoom.css"
+});
+
 module.exports = {
 	entry: './lib/smart.zoom.module.js',
 	output: {
@@ -16,11 +20,14 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
+				use: extractSass.extract({
 					use: [
-						'css-loader',
-						'sass-loader'
+						{
+							loader: 'css-loader'
+						},
+						{
+							loader: 'sass-loader'
+						}
 					]
 				})
 			},
@@ -32,7 +39,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new ExtractTextPlugin('smart.zoom.css'),
+		extractSass,
 	],
 	devtool: 'inline-source-map',
 	devServer: {

@@ -3,13 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Smart zoom demo page</title>
+	<link rel="stylesheet" type="text/css" href="demo.css">
 	<link rel="stylesheet" type="text/css" href="../dist/smart.zoom.css">
 </head>
 <body ng-controller="DemoAppController as vm"
 	  ng-cloak>
-	<h1>{{vm.title}}</h1>
 
-	<smart-zoom></smart-zoom>
+	<div class="photo-wrapper">
+		<smart-zoom	options="vm.zoomOptions"></smart-zoom>
+	</div>
 
 	<script src="../dist/smart.zoom.js"></script>
 	<script src="index.js"></script>
