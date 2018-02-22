@@ -6,7 +6,9 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-	entry: './lib/smart.zoom.module.js',
+	entry: {
+		app: './lib/smart.zoom.module.js'
+	},
 	output: {
 		filename: 'smart.zoom.js',
 		path: path.resolve(__dirname, 'dist')
@@ -24,6 +26,9 @@ module.exports = {
 					use: [
 						{
 							loader: 'css-loader'
+						},
+						{
+							loader: 'postcss-loader'
 						},
 						{
 							loader: 'sass-loader'

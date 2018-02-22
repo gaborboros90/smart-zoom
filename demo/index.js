@@ -6,15 +6,13 @@
 		.controller('DemoAppController', DemoAppController);
 
 	function DemoAppController() {
-		let vm = this;
-
-		vm.baseDir = 'test-images/';
-
-		vm.zoomOptions = {
-			imageUrl: vm.baseDir + 'test-image-001.jpg',
-			active: false,
-			enabled: true
-		}
+		let vm = angular.extend(this, {
+			zoomOptions: {
+				imageUrl: 'test-images/test-image-001.jpg',
+				active: false,
+				enabled: true
+			}
+		});
 	}
 
 	DemoAppController.$inject = [];

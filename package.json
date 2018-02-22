@@ -26,6 +26,7 @@
   "homepage": "https://github.com/gaborboros90/smart-zoom#readme",
   "devDependencies": {
     "angular": "^1.6.7",
+    "angular-mousewheel": "^1.0.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -38,6 +39,7 @@
     "mocha": "^4.0.1",
     "node-sass": "^4.7.2",
     "nyc": "^11.4.1",
+    "postcss-loader": "^2.1.0",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
     "sinon": "^4.1.3",
